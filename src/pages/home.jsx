@@ -15,7 +15,7 @@ export const HomePage = () => {
   const { data, isSuccess } = useQuery({
     queryFn: () => getProductsByStore(searchValue),
     queryKey: searchValue,
-    enabled: searchValue.length > 1,
+    enabled: searchValue.length > 0,
   });
 
   return (
