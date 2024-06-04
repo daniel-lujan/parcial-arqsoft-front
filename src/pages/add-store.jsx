@@ -25,13 +25,6 @@ const Item = ({ name, price, amount }) => {
 };
 
 export const AddStorePage = () => {
-  // let listProducts = [
-  //   { id: 0, name: "producto 1", price: 100, amount: 10 },
-  //   { id: 1, name: "producto 2", price: 100, amount: 10 },
-  //   { id: 1, name: "producto 3", price: 100, amount: 10 },
-  //   { id: 1, name: "producto 4", price: 100, amount: 10 },
-  // ];
-
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [phone, setPhone] = useState("");
