@@ -32,8 +32,12 @@ export const AddStorePage = () => {
   const { mutate } = useMutation({
     mutationFn: postStore,
     onSuccess: ({ id }) => {
-      products.map(async (productData) => {
-        await postProduct(id, productData);
+      products.map(async ({ name, amount, price }) => {
+        await postProduct(id, {
+          name,
+          amount: parseInt(amount),
+          price: parseInt(price),
+        });
       });
     },
   });
