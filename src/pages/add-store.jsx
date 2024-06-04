@@ -29,7 +29,7 @@ export const AddStorePage = () => {
   const [location, setLocation] = useState("");
   const [phone, setPhone] = useState("");
 
-  const { mutate } = useMutation({
+  const { mutate, isSuccess, data } = useMutation({
     mutationFn: postStore,
     onSuccess: ({ id }) => {
       products.map(async ({ name, amount, price }) => {
@@ -78,9 +78,27 @@ export const AddStorePage = () => {
       <AddProduct
         addProduct={(newProduct) => setProducts([...products, newProduct])}
       ></AddProduct>
-      <Button onClick={() => mutate({ name, phone, location })}>
-        Add store
-      </Button>
+      <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
+        {isSuccess && (
+          <span
+            style={{
+              backgroundColor: "#03e401",
+              color: "var(--background)",
+              borderRadius: "12px",
+              padding: "10px",
+              display: "flex",
+              justifyContent: "center",
+              gap: "10px",
+            }}
+          >
+            <CheckIcon />
+            Added store with ID: <strong>{data.id}</strong>
+          </span>
+        )}
+        <Button onClick={() => mutate({ name, phone, location })}>
+          Add store
+        </Button>
+      </div>
     </>
   );
 };
