@@ -1,0 +1,14 @@
+.button {
+  background-color: var(--primary);
+  border: none;
+  color: var(--secondary);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: inherit;
+  box-shadow: 0 0 20px rgba(16, 147, 245, 0.4);
+}
