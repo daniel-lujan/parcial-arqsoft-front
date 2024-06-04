@@ -38,7 +38,7 @@ export const AddProduct = ({ addProduct }) => {
         />
         <Input
           type="text"
-          placeholder="Product name"
+          placeholder="Amount"
           value={inputAmount}
           onChange={(e) => setInputAmount(e.target.value)}
         />
